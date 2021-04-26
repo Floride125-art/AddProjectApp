@@ -9,3 +9,7 @@ class ProjectForm(forms.ModelForm):
     class Meta:
         model = Project
         fields = ('project_name', 'link', 'details','image')
+class UpdateUserForm(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = ('username', 'email')
