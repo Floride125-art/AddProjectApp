@@ -19,3 +19,7 @@ class UpdateUserProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
         fields = ['profile_picture', 'bio', 'contact']
+class RateForm(forms.ModelForm):
+    class Meta:
+        model = Rate
+        exclude = ['user', 'project']
