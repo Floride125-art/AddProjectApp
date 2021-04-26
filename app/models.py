@@ -88,3 +88,28 @@ class Project(models.Model):
     def search_by_project_name(cls,search):
     	projects = cls.objects.filter(project_name__icontains=search)
     	return projects
+class Rate(models.Model):
+    rating = (
+        (1, '1'),
+        (2, '2'),
+        (3, '3'),
+        (4, '4'),
+        (5, '5'),
+        (6, '6'),
+        (7, '7'),
+        (8, '8'),
+        (9, '9'),
+        (10, '10'),
+    )
+    project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name='project', null=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, related_name='rate')
+    design = models.IntegerField(choices=rating, default=0, blank=True)
+    usability = models.IntegerField(choices=rating,default=0, blank=True)
+    content = models.IntegerField(choices=rating,default=0, blank=True)
+    date = models.DateTimeField(auto_now_add=True, blank=True)
+
+    def save_rate(self):
+        self.save()
+
+    class Meta:
+        ordering = ["-pk"]
