@@ -1,5 +1,5 @@
 # AddProjectApp
-This is a project for creating helping users to be able to post their projects and get to be reviewed by peers
+This project for creating an application like Awwards (It doesn't necessarily have to be exactly the same). The application will allow a user to post a project he/she has created and get it reviewed by his/her peers. 
 ## Author
 Floride Tuyisenge
 ## Technologies Used
